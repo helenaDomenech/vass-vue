@@ -1,19 +1,24 @@
-<template>
-  <div id="app">
+<template lang="pug">
+  #app
+    ec-header
+    ec-nav
+
+    router-view
     <!-- <img alt="Vue logo" src="./assets/logo.png"> -->
     <!-- <HelloWorld msg="Welcome to Your Vue.js App"/> -->
-    <chart></chart>
-  </div>
+    <!-- <chart></chart> -->
 </template>
 
 <script>
-// import HelloWorld from './components/HelloWorld.vue'
-import chart from './components/chart.vue'
+import EcNav from '@/components/ec-nav';
+import EcHeader from '@/components/ec-header';
+
 
 export default {
   name: 'app',
   components: {
-    chart
+    EcNav,
+    EcHeader
   }
 }
 </script>
@@ -23,7 +28,6 @@ export default {
   font-family: 'Avenir', Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  display: flex;
   box-sizing: border-box;
   text-align: center;
   color: #2c3e50;

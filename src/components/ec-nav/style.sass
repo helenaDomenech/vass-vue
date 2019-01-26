@@ -1,0 +1,17 @@
+.ec-nav
+    $root: &
+
+    &__container
+        width: 100%
+        display: flex
+        align-content: space-aroud
+
+    &__item
+        list-style: none
+
+        & + &
+            margin-left: $regular-padding
+
+    &__link
+        text-decoration: none
+
