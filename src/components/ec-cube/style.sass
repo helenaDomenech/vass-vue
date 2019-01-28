@@ -1,0 +1,108 @@
+
+// $cube-size: 5em
+
+// .ec-cube
+//   $root: &
+//   perspective: 10000px
+
+//   &__box
+//     display: block
+//     width: $cube-size
+//     height: $cube-size
+//     margin: 2em auto
+//     transform-style: preserve-3d
+//     background-color: peru
+
+//     transition: transform 350ms
+//     // animation: spin 4s infinite linear
+
+//     & &
+//       transform: rotateX(90deg);
+
+
+//   &__box:before,
+//   &__box:after,
+//     content: ''
+//     display: block
+//     width: $cube-size
+//     height: $cube-size
+//     position: absolute
+
+//   &__box:before
+//     background-color: pink
+//     transform: rotateY(90deg) translate3D(-50px,0,50px)
+
+//   &__box:after
+//     background-color: yellow
+//     transform: rotateY(90deg) rotateZ(180deg) translate3D(50px,0,-50px)
+
+// @keyframes spin
+//   0%
+//     transform: rotateY(0deg)
+//   100%
+//     transform: rotateY(360deg)
+
+
+$cube-size: 5em
+
+.ec-cube
+  $root: &
+
+  display: flex
+  align-items: center
+  justify-content: center
+
+  position: relative
+  width: 100%
+  height: 100%
+  perspective: 1000px
+
+  animation: spin 4s infinite linear
+
+  @keyframes spin
+    0%
+      transform: rotateY(0deg)
+
+    100%
+      transform: rotateY(360deg)
+
+  &__box
+    position: absolute
+    width: $cube-size
+    height: $cube-size
+
+    align-self: center
+
+    background-color: $color-primary-a1
+
+    transform-style: preserve-3d
+    transform: rotateX(-45deg) rotateY(45deg)
+
+
+    & &
+      transform: rotate(90deg)
+
+    &::before,
+    &::after
+      content: ''
+      position: absolute
+      width: $cube-size
+      height: $cube-size
+      background-color: $color-primary-a1
+
+    &::before
+      transform: translateZ($cube-size /2) translateX(0) rotateY(90deg)
+      background-color: darken($color-primary-a1, 30%)
+
+
+    &::after
+      background-color: lighten($color-primary-a1, 40%)
+      transform: translateZ($cube-size /2) translateX(-$cube-size) rotateY(-90deg)
+
+
+
+
+
+
+
+
