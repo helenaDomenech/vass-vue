@@ -1,6 +1,6 @@
 import Vue from 'vue'
 import Router from 'vue-router'
-import home from '@/components/home'
+import EcHome from '@/components/ec-home'
 import chart from '@/components/chart'
 
 Vue.use(Router)
@@ -10,7 +10,7 @@ export default new Router({
       {
         path: '/',
         name: 'home',
-        component: home
+        component: EcHome
       },
       {
         path: '/chart',
