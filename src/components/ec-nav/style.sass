@@ -1,9 +1,12 @@
 .ec-nav
     $root: &
     border-bottom: 1px solid $color-primary-a1
+    background-color: rgba(255, 255, 255, .7)
+
 
     &__container
-        padding: 0
+        margin: 0
+        padding: $regular-padding
         width: 100%
         display: flex
         align-content: space-aroud
@@ -17,4 +20,7 @@
     &__link
         color: $color-primary-a1
         text-decoration: none
+
+        &:hover
+            font-weight: bold
 

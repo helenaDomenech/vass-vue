@@ -2,9 +2,8 @@
   #app
     ec-header
     ec-nav
-
-    router-view
-    <!-- <chart></chart> -->
+    main
+      router-view
 </template>
 
 <script>
@@ -30,15 +29,21 @@ export default {
 }
 </script>
 
-<style>
-#app {
-  font-family: 'Avenir', Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  box-sizing: border-box;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 0;
-  height: 100vh;
-}
+<style lang="sass">
+#app
+  background-image: url("assets/background_app.jpg")
+  font-family: 'Avenir', Helvetica, Arial, sans-serif
+  -webkit-font-smoothing: antialiased
+  -moz-osx-font-smoothing: grayscale
+  box-sizing: border-box
+  color: #2c3e50
+  margin-top: 0
+  height: 100vh
+
+  main
+    display: flex
+    justify-content: center
+    align-items: center
+    height: 100%
+
 </style>
