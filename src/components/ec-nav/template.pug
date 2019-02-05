@@ -1,4 +1,4 @@
 nav.ec-nav
     ol.ec-nav__container
-        li.ec-nav__item(v-for="(route, index) in routes" :key="`route-menu-${index}`")
+        li.ec-nav__item(v-for="(route, index) in setRoutes" :key="`route-menu-${index}`")
             router-link.ec-nav__link(:to="route.path") {{route.name}}

@@ -4,5 +4,10 @@ export default {
         return {
             routes: this.$router.options.routes
         }
+    },
+    computed : {
+        setRoutes() {
+            return this.routes.filter(route => route.name !== 'registro' && route.name !== 'recordar')
+        }
     }
 }
