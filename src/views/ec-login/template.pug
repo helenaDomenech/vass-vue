@@ -1,0 +1,13 @@
+form.ec-login
+    h2.ec-login__title Login
+    .ec-login__field
+        input.ec-login__input(:model="input.user" type="text")
+        label.ec-login__label User
+    .ec-login__field
+        input.ec-login__input(:model="input.password" type="password")
+        label.ec-login__label Password
+    button.ec-login__button(@click="login()" type="submit") Sign in
+
+    router-link.ec-login__link(:to="{ path: 'registro' }" ) ¿Quieres registrarte?
+    router-link.ec-login__link(:to="{ path: 'recordar' }" ) ¿Has olvidado tu password?
+

@@ -4,6 +4,9 @@ import EcHome from '@/components/ec-home'
 import chart from '@/components/chart'
 import ecCube from '@/components/ec-cube'
 import ecTodo from '@/components/ec-todo'
+import ecLogin from '@/views/ec-login'
+import ecRegistro from '@/views/ec-registro'
+import ecRecordar from '@/views/ec-recordar'
 
 Vue.use(Router)
 
@@ -28,6 +31,21 @@ export default new Router({
         path: '/todo',
         name: 'todo',
         component: ecTodo
+      },
+      {
+        path: '/login',
+        name: 'login',
+        component: ecLogin
+      },
+      {
+        path: '/registro',
+        name: 'registro',
+        component: ecRegistro
+      },
+      {
+        path: '/recordar',
+        name: 'recordar',
+        component: ecRecordar
       }
     ]
 })

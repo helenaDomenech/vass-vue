@@ -1,0 +1,81 @@
+@mixin form()
+    $root: &
+
+    display: flex
+    flex-direction: column
+    justify-content: flex-start
+    padding: $regular-padding
+
+    &__return
+        justify-content: flex-end
+        display: flex
+        cursor: pointer
+
+        &::before
+            content: '<'
+            padding-right: .5em
+
+    &__title
+        font-weight: bold
+        color: $color-tertiary-a2
+        font-size: 2em
+
+    &__field
+        position: relative
+        box-sizing: border-box
+        display: flex
+        width: 100%
+
+    &__label
+        text-align: left
+        margin: $regular-padding 0
+        transition: transform .5s ease-in-out
+        position: absolute
+        top: 0
+        left: 0
+
+    &__input
+        height: 2em
+        width: 100%
+        border: none
+        box-shadow: inset 0 -3px 0 -2px $color-tertiary-a2
+        padding: $regular-padding
+        transition: box-shadow .5s ease-in-out
+        margin-bottom: $regular-padding * 2
+        outline: none
+
+        &:focus
+            box-shadow: inset 0 -4px 0 -2px $color-tertiary-a2
+
+
+        &:focus + #{$root}__label
+            transform: translate(0, -1em) scale(0.8)
+
+    &__button
+        height: 2em
+        width: 38%
+        align-self: center
+        font-size: 1.5em
+        background-color: #ffffff
+        color: $color-tertiary-a2
+        border: 1px solid $color-tertiary-a2
+        border-radius: 2em
+        margin: $regular-padding 0
+        outline: none
+        transition: all .5s ease
+
+        &:hover
+            color: #ffffff
+            background-color: $color-tertiary-a2
+
+    &__link
+        color: $color-tertiary-a2
+        transition: all .5s ease
+
+
+        &:hover
+            transform: scale(1.1)
+
+
+
+

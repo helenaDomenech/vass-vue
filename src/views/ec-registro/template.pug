@@ -1,0 +1,17 @@
+div
+    .ec-recordar__return(@click="$router.go(-1)") Volver
+    form.ec-registro
+        h2.ec-recordar__title Registrate
+        .ec-login__field
+            input.ec-recordar__input(type="text")
+            label.ec-recordar__label Nombre
+        .ec-login__field
+            label.ec-recordar__label Email
+            input.ec-recordar__input(type="email")
+        .ec-login__field
+            input.ec-recordar__input(type="password")
+            label.ec-recordar__label Contraseña
+        .ec-login__field
+            label.ec-recordar__label Confirmar contraseña
+            input.ec-recordar__input(type="password" placeholder="Email")
+        button.ec-recordar__button(type="submit") Sign in

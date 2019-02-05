@@ -1,3 +1,32 @@
 .ec-todo
-    .ec-todo__title
-        h3 Este es el To Do
+    .ec-todo__header
+        h3.ec-todo__title Crea una lista TODO
+
+        form(@submit.prevent).ec-todo__form
+            label.ec-todo__label Nueva tarea
+            input(
+                type="text",
+                placeholder="Que tienes que hacer"
+                @keypress="typing=true"
+                @keyup.enter="addTodo($event)"
+                :model="todo"
+                ).ec-todo__input
+    p.ec-todo__message.ec-todo__message--warning(v-show="typing") Pulsa enter para añadir tu tarea
+    .ec-todo__content
+        h3.ec-todo__title Tienes que hacer...
+        .ec-todo__list.ec-todo__list--done(v-for="(todo, index) in todos", :class="")
+            input.ec-todo__check(
+                type="checkbox"
+                v-model="todo.completed"
+                :checked="todo.completed"
+                value="todo.completed")
+            input.ec-todo__input.ec-todo__field(
+                type="text"
+                v-model="todo.text"
+                @keypress="todo.editing=true"
+                keyup.enter="updateTodo(todo)")
+            button.ec-todo__button(@click="deleteTodo(todo._id)") x
+
+        p.ec-todo__message.ec-todo__message--info(v-show="todo.editing") Pulsa enter para modificar
+
+        p.ec-todo__message.ec-todo__message--info(v-show="todos.length==0") Su lista está vacía

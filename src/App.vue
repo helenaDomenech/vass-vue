@@ -14,6 +14,15 @@ import EcHeader from '@/components/ec-header';
 
 export default {
   name: 'app',
+  data() {
+    return {
+      autenticado: false,
+      mockAccount: {
+        user: "vueuser",
+        password: "12345"
+      }
+    }
+  },
   components: {
     EcNav,
     EcHeader
